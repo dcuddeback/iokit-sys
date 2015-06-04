@@ -2,6 +2,12 @@
 name = "IOKit-sys"
 version = "0.1.0"
 authors = ["David Cuddeback <david.cuddeback@gmail.com>"]
+description = "FFI bindings for IOKit"
+license = "MIT"
+homepage = "https://github.com/dcuddeback/iokit-sys"
+repository = "https://github.com/dcuddeback/iokit-sys"
+readme = "README.md"
+keywords = ["iokit", "system", "bindings", "hardware"]
 
 links = "IOKit"
 build = "build.rs"
