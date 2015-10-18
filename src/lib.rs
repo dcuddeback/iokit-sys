@@ -1,10 +1,10 @@
 #![allow(non_camel_case_types,non_upper_case_globals,non_snake_case)]
 
-extern crate CoreFoundation_sys;
+extern crate CoreFoundation_sys as cf;
 extern crate libc;
 extern crate mach;
 
-use CoreFoundation_sys::{CFTypeRef,CFDictionaryRef,CFMutableDictionaryRef,CFStringRef,CFAllocatorRef};
+use cf::{CFTypeRef,CFDictionaryRef,CFMutableDictionaryRef,CFStringRef,CFAllocatorRef};
 use libc::{c_void,c_char,c_int,size_t,uintptr_t};
 
 use mach::boolean::boolean_t;

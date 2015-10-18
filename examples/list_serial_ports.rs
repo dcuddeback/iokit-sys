@@ -1,5 +1,5 @@
 extern crate IOKit_sys;
-extern crate CoreFoundation_sys;
+extern crate CoreFoundation_sys as cf;
 extern crate libc;
 extern crate mach;
 
@@ -14,7 +14,7 @@ use mach::port::{mach_port_t,MACH_PORT_NULL};
 use mach::kern_return::KERN_SUCCESS;
 
 use IOKit_sys::*;
-use CoreFoundation_sys::*;
+use cf::*;
 
 
 fn main() {
