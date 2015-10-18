@@ -9,7 +9,7 @@ Add `IOKit-sys` as a dependency in `Cargo.toml`:
 
 ```toml
 [dependencies]
-IOKit-sys = "0.1.1"
+IOKit-sys = "0.1.2"
 ```
 
 Import the `IOKit_sys` crate and use the functions as they're defined in the native `IOKit` library
