@@ -25,7 +25,10 @@ mod types;
 // exports from <IOKit/IOKitLib.h>
 
 #[repr(C)]
-struct IONotificationPort;
+struct IONotificationPort {
+    __private: c_void,
+}
+
 pub type IONotificationPortRef = *mut IONotificationPort;
 
 pub type IOServiceMatchingCallback = extern fn (refcon: *mut c_void, iterator: io_iterator_t);
