@@ -25,7 +25,7 @@ mod types;
 // exports from <IOKit/IOKitLib.h>
 
 #[repr(C)]
-struct IONotificationPort {
+pub struct IONotificationPort {
     __private: c_void,
 }
 
