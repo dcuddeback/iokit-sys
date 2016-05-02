@@ -15,17 +15,21 @@ use mach::types::task_port_t;
 use mach::vm_types::{mach_vm_address_t,mach_vm_size_t};
 
 pub use io_return::*;
+pub use keys::*;
 pub use serial::*;
 pub use types::*;
+pub use usb::*;
 
 mod io_return;
+mod keys;
 mod serial;
 mod types;
+mod usb;
 
 // exports from <IOKit/IOKitLib.h>
 
 #[repr(C)]
-struct IONotificationPort {
+pub struct IONotificationPort {
     __private: c_void,
 }
 
