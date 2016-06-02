@@ -9,7 +9,7 @@ Add `IOKit-sys` as a dependency in `Cargo.toml`:
 
 ```toml
 [dependencies]
-IOKit-sys = "0.1.2"
+IOKit-sys = "0.1"
 ```
 
 Import the `IOKit_sys` crate and use the functions as they're defined in the native `IOKit` library
@@ -28,6 +28,10 @@ each header file in the IOKit framework. For example, `src/io_return.rs` contain
 from `IOKit/IOReturn.h`. The definitions in each file are more or less in the same order that they
 appear in the matching header file. Each file is then re-exported in the crate root, e.g., `pub use
 io_return::*`.
+
+### Contributors
+* [dcuddeback](https://github.com/dcuddeback)
+* [dhylands](https://github.com/dhylands)
 
 ## License
 Copyright © 2015 David Cuddeback
