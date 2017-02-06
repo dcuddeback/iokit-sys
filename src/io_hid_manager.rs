@@ -1,8 +1,9 @@
 // exports from <IOKit/hid/IOHIDManager.h>
 
-use libc::{c_void, c_int};
+use libc::c_void;
 use cf::{CFAllocatorRef, CFDictionaryRef};
 use io_return::IOReturn;
+use io_hid_keys::IOHIDManagerOptions;
 use io_hid_base::{IOHIDDeviceCallback, IOHIDReportCallback};
 
 #[doc(hidden)]
@@ -11,18 +12,6 @@ pub struct __IOHIDManager {
     __private: c_void,
 }
 pub type IOHIDManagerRef = *mut __IOHIDManager;
-
-pub type IOHIDReportType = c_int;
-pub const kIOHIDReportTypeInput: IOHIDReportType   = 0;
-pub const kIOHIDReportTypeOutput: IOHIDReportType  = 1;
-pub const kIOHIDReportTypeFeature: IOHIDReportType = 2;
-pub const kIOHIDReportTypeCount: IOHIDReportType   = 3;
-
-pub type IOHIDManagerOptions = c_int;
-pub const kIOHIDManagerOptionNone: IOHIDManagerOptions                    = 0;
-pub const kIOHIDManagerOptionUsePersistentProperties: IOHIDManagerOptions = 1;
-pub const kIOHIDManagerOptionDoNotLoadProperties: IOHIDManagerOptions     = 2;
-pub const kIOHIDManagerOptionDoNotSaveProperties: IOHIDManagerOptions     = 4;
 
 extern "C" {
     pub fn IOHIDManagerCreate(allocator: CFAllocatorRef, options: IOHIDManagerOptions) -> IOHIDManagerRef;
