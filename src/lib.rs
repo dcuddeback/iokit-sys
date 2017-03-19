@@ -19,12 +19,18 @@ pub use keys::*;
 pub use serial::*;
 pub use types::*;
 pub use usb::*;
+pub use io_hid_keys::*;
+pub use io_hid_base::*;
+pub use io_hid_manager::*;
 
 mod io_return;
 mod keys;
 mod serial;
 mod types;
 mod usb;
+mod io_hid_keys;
+mod io_hid_base;
+mod io_hid_manager;
 
 // exports from <IOKit/IOKitLib.h>
 
