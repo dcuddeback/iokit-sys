@@ -13,6 +13,12 @@ pub struct __IOHIDManager {
 }
 pub type IOHIDManagerRef = *mut __IOHIDManager;
 
+pub type IOHIDManagerOptions = IOOptionBits;
+pub const kIOHIDManagerOptionNone: IOHIDManagerOptions                    = 0x0;
+pub const kIOHIDManagerOptionUsePersistentProperties: IOHIDManagerOptions = 0x1;
+pub const kIOHIDManagerOptionDoNotLoadProperties: IOHIDManagerOptions     = 0x2;
+pub const kIOHIDManagerOptionDoNotSaveProperties: IOHIDManagerOptions     = 0x4;
+
 extern "C" {
     pub fn IOHIDManagerCreate(allocator: CFAllocatorRef, options: IOOptionBits) -> IOHIDManagerRef;
     pub fn IOHIDManagerSetDeviceMatching(manager: IOHIDManagerRef, matching: CFDictionaryRef);
