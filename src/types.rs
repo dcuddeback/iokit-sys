@@ -5,6 +5,9 @@ use libc::{c_char,c_int,c_uint};
 use mach::port::mach_port_t;
 use mach::vm_types::mach_vm_address_t;
 
+#[cfg(target_pointer_width = "32")]
+use mach::vm_types::{mach_vm_size_t, vm_address_t};
+
 pub type IOOptionBits = u32;
 pub type IOFixed      = i32;
 pub type IOVersion    = u32;
