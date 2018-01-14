@@ -51,10 +51,10 @@ pub const kIOServiceInteractionAllowed: u32 = 0x00000001;
 pub const kIORegistryIterateRecursively: IOOptionBits = 0x00000001;
 pub const kIORegistryIterateParents:     IOOptionBits = 0x00000002;
 
-type IOAsyncCallback0 = extern fn (refcon: *mut c_void, result: IOReturn);
-type IOAsyncCallback1 = extern fn (refcon: *mut c_void, result: IOReturn, arg0: *mut c_void);
-type IOAsyncCallback2 = extern fn (refcon: *mut c_void, result: IOReturn, arg0: *mut c_void, arg1: *mut c_void);
-type IOAsyncCallback = extern fn (refcon: *mut c_void, result: IOReturn, args: *mut *mut c_void, numArgs: u32);
+pub type IOAsyncCallback0 = extern fn (refcon: *mut c_void, result: IOReturn);
+pub type IOAsyncCallback1 = extern fn (refcon: *mut c_void, result: IOReturn, arg0: *mut c_void);
+pub type IOAsyncCallback2 = extern fn (refcon: *mut c_void, result: IOReturn, arg0: *mut c_void, arg1: *mut c_void);
+pub type IOAsyncCallback = extern fn (refcon: *mut c_void, result: IOReturn, args: *mut *mut c_void, numArgs: u32);
 
 extern "C" {
     pub static kIOMasterPortDefault: mach_port_t;
