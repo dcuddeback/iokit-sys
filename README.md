@@ -32,6 +32,8 @@ io_return::*`.
 ### Contributors
 * [dcuddeback](https://github.com/dcuddeback)
 * [dhylands](https://github.com/dhylands)
+* [forticulous](https://github.com/forticulous)
+* [ndusart](https://github.com/ndusart)
 
 ## License
 Copyright © 2015 David Cuddeback
