@@ -4,7 +4,7 @@ extern crate CoreFoundation_sys as cf;
 extern crate libc;
 extern crate mach;
 
-use cf::{CFTypeRef,CFDictionaryRef,CFMutableDictionaryRef,CFStringRef,CFAllocatorRef};
+use cf::{CFTypeRef,CFDictionaryRef,CFMutableDictionaryRef,CFStringRef,CFAllocatorRef,CFRunLoopSourceRef};
 use libc::{c_void,c_char,c_int,size_t,uintptr_t};
 
 use mach::boolean::boolean_t;
@@ -63,6 +63,7 @@ extern "C" {
 
     pub fn IONotificationPortCreate(masterPort: mach_port_t) -> IONotificationPortRef;
     pub fn IONotificationPortDestroy(notify: IONotificationPortRef);
+	pub fn IONotificationPortGetRunLoopSource(notify: IONotificationPortRef) -> CFRunLoopSourceRef;
     pub fn IONotificationPortGetMachPort(notify: IONotificationPortRef) -> mach_port_t;
 
     pub fn IOCreateReceivePort(msgType: u32, recvPort: *mut mach_port_t) -> kern_return_t;
