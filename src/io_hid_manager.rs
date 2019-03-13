@@ -1,7 +1,7 @@
 // exports from <IOKit/hid/IOHIDManager.h>
 
 use libc::c_void;
-use cf::{CFAllocatorRef, CFDictionaryRef};
+use cf::{base::CFAllocatorRef, dictionary::CFDictionaryRef};
 use types::IOOptionBits;
 use io_return::IOReturn;
 use io_hid_base::{IOHIDDeviceCallback, IOHIDReportCallback};

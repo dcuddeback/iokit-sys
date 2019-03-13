@@ -15,4 +15,4 @@ build = "build.rs"
 [dependencies]
 libc = "0.2"
 mach = "0.1.1"
-CoreFoundation-sys = "0.1.4"
+core-foundation = "0.6.3"
