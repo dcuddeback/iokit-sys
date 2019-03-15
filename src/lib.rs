@@ -38,7 +38,6 @@ mod io_hid_manager;
 pub struct IONotificationPort {
     __private: c_void,
 }
-
 pub type IONotificationPortRef = *mut IONotificationPort;
 
 pub type IOServiceMatchingCallback = extern fn (refcon: *mut c_void, iterator: io_iterator_t);
@@ -63,6 +62,7 @@ extern "C" {
 
     pub fn IONotificationPortCreate(masterPort: mach_port_t) -> IONotificationPortRef;
     pub fn IONotificationPortDestroy(notify: IONotificationPortRef);
+    pub fn IONotificationPortGetRunLoopSource(notify: IONotificationPortRef) -> cf::runloop::CFRunLoopSourceRef;
     pub fn IONotificationPortGetMachPort(notify: IONotificationPortRef) -> mach_port_t;
 
     pub fn IOCreateReceivePort(msgType: u32, recvPort: *mut mach_port_t) -> kern_return_t;
