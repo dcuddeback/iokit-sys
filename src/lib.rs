@@ -1,10 +1,10 @@
 #![allow(non_camel_case_types,non_upper_case_globals,non_snake_case)]
 
-extern crate CoreFoundation_sys as cf;
+extern crate core_foundation as cf;
 extern crate libc;
 extern crate mach;
 
-use cf::{CFTypeRef,CFDictionaryRef,CFMutableDictionaryRef,CFStringRef,CFAllocatorRef};
+use cf::{base::CFTypeRef,dictionary::CFDictionaryRef,dictionary::CFMutableDictionaryRef,string::CFStringRef,base::CFAllocatorRef};
 use libc::{c_void,c_char,c_int,size_t,uintptr_t};
 
 use mach::boolean::boolean_t;
@@ -38,7 +38,6 @@ mod io_hid_manager;
 pub struct IONotificationPort {
     __private: c_void,
 }
-
 pub type IONotificationPortRef = *mut IONotificationPort;
 
 pub type IOServiceMatchingCallback = extern fn (refcon: *mut c_void, iterator: io_iterator_t);
@@ -63,6 +62,7 @@ extern "C" {
 
     pub fn IONotificationPortCreate(masterPort: mach_port_t) -> IONotificationPortRef;
     pub fn IONotificationPortDestroy(notify: IONotificationPortRef);
+    pub fn IONotificationPortGetRunLoopSource(notify: IONotificationPortRef) -> cf::runloop::CFRunLoopSourceRef;
     pub fn IONotificationPortGetMachPort(notify: IONotificationPortRef) -> mach_port_t;
 
     pub fn IOCreateReceivePort(msgType: u32, recvPort: *mut mach_port_t) -> kern_return_t;

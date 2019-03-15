@@ -1,5 +1,5 @@
 extern crate IOKit_sys;
-extern crate CoreFoundation_sys as cf;
+extern crate core_foundation as cf;
 extern crate libc;
 extern crate mach;
 
@@ -14,7 +14,7 @@ use mach::port::{mach_port_t,MACH_PORT_NULL};
 use mach::kern_return::KERN_SUCCESS;
 
 use IOKit_sys::*;
-use cf::*;
+use cf::{base::*, string::*, dictionary::*};
 
 
 fn main() {
@@ -64,7 +64,7 @@ fn main() {
 
             let result = IORegistryEntryCreateCFProperties(modem_service, &mut props, kCFAllocatorDefault, 0);
             if result == KERN_SUCCESS {
-                CFDictionaryApplyFunction(props, print_property_entry, ptr::null());
+                CFDictionaryApplyFunction(props, print_property_entry, ptr::null_mut());
             }
 
             IOObjectRelease(modem_service);
@@ -72,7 +72,7 @@ fn main() {
     }
 }
 
-extern "C" fn print_property_entry(key: CFTypeRef, value: CFTypeRef, _context: *const c_void) {
+extern "C" fn print_property_entry(key: CFTypeRef, value: CFTypeRef, _context: *mut c_void) {
     unsafe {
         let mut buf = Vec::<c_char>::with_capacity(256);
 
