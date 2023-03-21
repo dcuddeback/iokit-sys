@@ -1,7 +1,7 @@
 extern crate IOKit_sys;
 extern crate CoreFoundation_sys as cf;
 extern crate libc;
-extern crate mach;
+extern crate mach2;
 
 use std::mem;
 use std::ptr;
@@ -10,8 +10,8 @@ use std::ffi::{CString,CStr};
 
 use libc::{c_char,c_void};
 
-use mach::port::{mach_port_t,MACH_PORT_NULL};
-use mach::kern_return::KERN_SUCCESS;
+use mach2::port::{mach_port_t,MACH_PORT_NULL};
+use mach2::kern_return::KERN_SUCCESS;
 
 use IOKit_sys::*;
 use cf::*;

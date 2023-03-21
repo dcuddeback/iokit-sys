@@ -7,12 +7,12 @@ extern crate mach;
 use cf::{CFTypeRef,CFDictionaryRef,CFMutableDictionaryRef,CFStringRef,CFAllocatorRef};
 use libc::{c_void,c_char,c_int,size_t,uintptr_t};
 
-use mach::boolean::boolean_t;
-use mach::clock_types::mach_timespec_t;
-use mach::kern_return::kern_return_t;
-use mach::port::mach_port_t;
-use mach::types::task_port_t;
-use mach::vm_types::{mach_vm_address_t,mach_vm_size_t};
+use mach2::boolean::boolean_t;
+use mach2::clock_types::mach_timespec_t;
+use mach2::kern_return::kern_return_t;
+use mach2::port::mach_port_t;
+use mach2::types::task_port_t;
+use mach2::vm_types::{mach_vm_address_t,mach_vm_size_t};
 
 pub use io_return::*;
 pub use keys::*;

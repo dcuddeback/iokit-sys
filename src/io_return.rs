@@ -1,6 +1,6 @@
 // exports from <IOKit/IOReturn.h>
 
-use mach::kern_return::{kern_return_t,KERN_SUCCESS};
+use mach2::kern_return::{kern_return_t,KERN_SUCCESS};
 
 pub type IOReturn = kern_return_t;
 
